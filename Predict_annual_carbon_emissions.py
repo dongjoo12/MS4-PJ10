@@ -5,7 +5,7 @@ from sklearn.linear_model import LinearRegression
 import numpy as np
 
 def exchange_main():
-    st.title('KEPCO Carbon Emissions Analysis')
+    # st.title('KEPCO Carbon Emissions Analysis')
 
     # Load data
     kepco_data = pd.read_csv('KEPCO_data.csv', delimiter=',', encoding='utf-8')
