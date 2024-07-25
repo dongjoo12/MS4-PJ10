@@ -43,15 +43,15 @@ def exchange_main():
 
     combined_df = pd.concat([df, future_df])
 
-    st.title('제조업종별 연도별 전력 소비량 (2018-2030)')
+    # st.title('제조업종별 연도별 전력 소비량 (2018-2030)')
 
     fig, ax = plt.subplots(figsize=(15, 10))
 
     for industry in industries:
         ax.plot(combined_df['Year'], combined_df[industry], marker='o', linestyle='-', label=f'{industry}')
 
-    ax.set_xlabel('연도')
-    ax.set_ylabel('전력 소비량 (MWh)')
+    ax.set_xlabel('Year')
+    ax.set_ylabel('power consumption (MWh)')
     ax.legend()
     ax.grid(True)
 

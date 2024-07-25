@@ -5,7 +5,7 @@ import matplotlib.pyplot as plt
 from sklearn.linear_model import LinearRegression
 
 def exchange_main():
-    st.title("Prediction of annual electricity consumption of cars (2018-2030)")
+    # st.title("자동차의 연간 전력 소비량 예측 (2018-2030)")
 
     data = {
         'Year': [2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023],
@@ -45,7 +45,7 @@ def exchange_main():
 
     st.pyplot(fig)
 
-    st.write(f"Predicted electricity consumption of cars for the year 2030: {car_trailer_predictions[-1]:.2f} MWh")
+    st.write(f"2030년 자동차의 예상 전기 소비량 : {car_trailer_predictions[-1]:.2f} MWh")
 
 if __name__ == "__main__":
     exchange_main()

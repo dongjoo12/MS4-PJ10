@@ -65,13 +65,13 @@ def exchange_main():
     target_2030_emissions = kepco_data.loc[kepco_data['Year'] == 2018, 'Carbon_Emissions_MMT'].values[0] * 0.6
     projected_2030_emissions = future_emissions[-1]
 
-    st.write(f"Target 2030 Emissions: {target_2030_emissions:.2f} MMT")
-    st.write(f"Projected 2030 Emissions: {projected_2030_emissions:.2f} MMT")
+    st.write(f"2030년 목표 배출량 : {target_2030_emissions:.2f} MMT")
+    st.write(f"2030년 예측 배출량 : {projected_2030_emissions:.2f} MMT")
 
     if projected_2030_emissions <= target_2030_emissions:
-        st.write("KEPCO is on track to meet the 40% reduction goal by 2030.")
+        st.write("KEPCO는 2030년까지 40% 감축 목표를 달성하기 위해 계획대로 진행 중")
     else:
-        st.write("KEPCO needs to implement additional measures to meet the 40% reduction goal by 2030.")
+        st.write("KEPCO는 2030년까지 40% 감축 목표를 달성하기 위해 추가 조치를 시행해야 합니다.")
 
     st.write('-------------------------------------------------------------------')
     
