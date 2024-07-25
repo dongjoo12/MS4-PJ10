@@ -14,7 +14,8 @@ t2.title("2030년까지의 탄소 배출량 감소 목표: 현실적인 분석�
 t2.markdown(" **| MS AI SCHOOL 1차 프로젝트 |**  14반 12번 박혜인, 14반 15번 신동주, 15반 06번 김신실, 15반 28번 장예연, 15반 31번 허인석")
 
 ## Data
-with st.spinner('Updating Report...'):
+# with st.spinner('Updating Report...'):
+with st.expander('1 탄소 배출량 예측(2018-2030)'):
     #Metrics setting and rendering
     # m1, m2, m3, m4, m5 = st.columns((1,1,1,1,1))
     # m1.write('')
@@ -24,10 +25,10 @@ with st.spinner('Updating Report...'):
     # m1.write('')
     
     # Number of Completed Handovers by Hour
-    st.write('-------------------------------------------------------------------')
-    st.subheader('탄소 배출량 예측(2018-2030)')
+    # st.write('-------------------------------------------------------------------')
+    # st.subheader('탄소 배출량 예측(2018-2030)')
     Predict_annual_carbon_emissions.exchange_main()
-    st.write('-------------------------------------------------------------------')
+    # st.write('-------------------------------------------------------------------')
 
     # g1, g2, g3 = st.columns((1,1,1))
     # fig = px.bar(template = 'seaborn')
@@ -47,41 +48,41 @@ with st.spinner('Updating Report...'):
     # g3.plotly_chart(fig, use_container_width=True) 
       
     # Waiting Handovers table
-    cw1, cw2 = st.columns((2.5, 1.7))
-    fig = go.Figure(
-            data = [go.Table (columnorder = [0,1,2,3,4,5,6,7,8,9], columnwidth = [30,10,10,10,10,15,15,15,15,15],
-                header = dict(
-                 font=dict(size=12, color = 'white'),
-                 fill_color = '#264653',
-                 line_color = 'rgba(255,255,255,0.2)',
-                 align = ['left','center'],
-                 height=20
-                 )
-              , cells = dict(
-                  font=dict(size=12),
-                  align = ['left','center'],
-                  fill_color = [],
-                  line_color = 'rgba(255,255,255,0.2)',
-                  height=20))])
-    fig.update_layout(title_text="Current Waiting Handovers",title_font_color = '#264653',title_x=0,margin= dict(l=0,r=10,b=10,t=30), height=480)                                                           
-    cw1.plotly_chart(fig, use_container_width=True)    
+    # cw1, cw2 = st.columns((2.5, 1.7))
+    # fig = go.Figure(
+    #         data = [go.Table (columnorder = [0,1,2,3,4,5,6,7,8,9], columnwidth = [30,10,10,10,10,15,15,15,15,15],
+    #             header = dict(
+    #              font=dict(size=12, color = 'white'),
+    #              fill_color = '#264653',
+    #              line_color = 'rgba(255,255,255,0.2)',
+    #              align = ['left','center'],
+    #              height=20
+    #              )
+    #           , cells = dict(
+    #               font=dict(size=12),
+    #               align = ['left','center'],
+    #               fill_color = [],
+    #               line_color = 'rgba(255,255,255,0.2)',
+    #               height=20))])
+    # fig.update_layout(title_text="Current Waiting Handovers",title_font_color = '#264653',title_x=0,margin= dict(l=0,r=10,b=10,t=30), height=480)                                                           
+    # cw1.plotly_chart(fig, use_container_width=True)    
     
-    # Current Waiting Table
-    fig = go.Figure(
-            data = [go.Table (columnorder = [0,1,2,3], columnwidth = [15,40,20,20],
-                header = dict(
-                 font=dict(size=12, color = 'white'),
-                 fill_color = '#264653',
-                 align = 'left',
-                 height=20
-                 )
-              , cells = dict(
-                  font=dict(size=12),
-                  align = 'left',
-                  fill_color='#F0F2F6',
-                  height=20))]) 
-    fig.update_layout(title_text="Current Waiting Callsigns",title_font_color = '#264653',title_x=0,margin= dict(l=0,r=10,b=10,t=30), height=480)
-    cw2.plotly_chart(fig, use_container_width=True)
+    # # Current Waiting Table
+    # fig = go.Figure(
+    #         data = [go.Table (columnorder = [0,1,2,3], columnwidth = [15,40,20,20],
+    #             header = dict(
+    #              font=dict(size=12, color = 'white'),
+    #              fill_color = '#264653',
+    #              align = 'left',
+    #              height=20
+    #              )
+    #           , cells = dict(
+    #               font=dict(size=12),
+    #               align = 'left',
+    #               fill_color='#F0F2F6',
+    #               height=20))]) 
+    # fig.update_layout(title_text="Current Waiting Callsigns",title_font_color = '#264653',title_x=0,margin= dict(l=0,r=10,b=10,t=30), height=480)
+    # cw2.plotly_chart(fig, use_container_width=True)
        
 with st.spinner('Report updated!'):
     time.sleep(1)     
