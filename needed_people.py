@@ -2,7 +2,7 @@ import streamlit as st
 import matplotlib.pyplot as plt
 
 def exchange_main():
-    st.title("Number of People Needed to Switch from Car to Bus to Achieve Target Carbon Reduction")
+    # st.title("몇 명이 더 참여해야 할까?")
 
     # 인구 데이터
     population = {
@@ -34,8 +34,13 @@ def exchange_main():
         # 목표 탄소 감소량을 달성하기 위해 필요한 사람 수를 계산
         people_needed[year] = target_reduction / emission_diff
 
-    st.write(f'Annual goal : {int(people_needed[year])}') # 매년 골
-    st.write(f'Everyday goal : {int(people_needed[year]/365)}') # 매일 목표인데, 단순 계산으로 함 (이유는 정확하게 계산하지 않아도 됨. 어차피 초과 달성하면 더 좋기 때문)
+    st.write('조건 : 자동차 탄소 배출량 = 210g, 버스 탄소 배출량 = 27.7g, 버스 최대 탑승 인원 = 50 명')
+    st.write('목표 탄소 감소량 = 12.74 MMT')
+    st.write('계산식 : 배출량 차이 = 자동차 탄소 배출량 - 버스 탄소 배출량 / 버스 최대 탑승 인원 (210g - 27.7g / 50 명)')
+    st.write('매년 추가 인원 : 목표 탄소 감소량 / 배출량 차이 (12.74 MMT / 209.5g)')
+    
+    st.write(f'매년 추가 목표 이용객 수 : {int(people_needed[year])}') # 매년 골
+    st.write(f'매일 추가 목표 이용객 수 : {int(people_needed[year]/365)}') # 매일 목표인데, 단순 계산으로 함 (이유는 정확하게 계산하지 않아도 됨. 어차피 초과 달성하면 더 좋기 때문)
 
     # # 결과를 시각화
     # fig, ax = plt.subplots(figsize=(10, 6))
